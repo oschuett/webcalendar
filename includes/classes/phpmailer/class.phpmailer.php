@@ -1200,7 +1200,7 @@ class PHPMailer
         // Replace every spaces and tabs when it's the last character on a line
         $encoded = preg_replace_callback("/([\011\040])".$this->LE."/",
           function ($match) {
-            return '='.sprintf('%02X', ord($match[1])).'".$this->LE."'
+            return '='.sprintf('%02X', ord($match[1])).'".$this->LE."';
           }, $encoded);
 
         // Maximum line length of 76 characters before CRLF (74 + space + '=')
