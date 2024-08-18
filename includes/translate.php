@@ -67,7 +67,7 @@ function read_trans_file ( $in_file, $out_file = '', $strip = true ) {
     if ( strlen ( $buffer ) == 0 )
       continue;
 
-    if ( get_magic_quotes_runtime () && $strip )
+    if ( false && $strip )
       $buffer = stripslashes ( $buffer );
 
     // Convert quotes to entities.

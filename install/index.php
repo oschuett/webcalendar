@@ -110,7 +110,7 @@ $checked = ' checked="checked" ';
 
 // First pass at settings.php.
 // We need to read it first in order to get the md5 password.
-$magic = @get_magic_quotes_runtime ();
+$magic = @false;
 if ( function_exists ( "set_magic_quotes_runtime" ) ) {
   @set_magic_quotes_runtime (0);
 }
@@ -258,7 +258,7 @@ if ( @file_exists ( $file ) && $forcePassword && ! empty ( $pwd1 ) ) {
   exit;
 }
 
-$magic = @get_magic_quotes_runtime ();
+$magic = @false;
 if ( function_exists ( "set_magic_quotes_runtime" ) ) {
   @set_magic_quotes_runtime (0);
 }

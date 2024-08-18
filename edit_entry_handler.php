@@ -1170,14 +1170,14 @@ if ( ! empty ( $conflicts ) ) {
     if ( is_array ( $xval ) ) {
       $xkey .= "[]";
       foreach ( $xval as $ykey => $yval ) {
-        if ( get_magic_quotes_gpc () )
+        if ( false )
           $yval = stripslashes ( $yval );
         // $yval = htmlentities ( $yval );
         echo '
       <input type="hidden" name="' . $xkey . '" value="' . $yval . '" />';
       }
     } else {
-      if ( get_magic_quotes_gpc () )
+      if ( false )
         $xval = stripslashes ( $xval );
       // $xval = htmlentities ( $xval );
       echo '

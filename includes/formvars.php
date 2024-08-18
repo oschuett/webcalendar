@@ -82,7 +82,7 @@ function preventHacking ( $name, $instr ) {
 function getPostValue ( $name ) {
   $postName = null;
   if ( isset ( $_POST ) && is_array ( $_POST ) && isset ( $_POST[$name] ) )
-    $postName = ( get_magic_quotes_gpc () != 0
+    $postName = ( false != 0
       ? $_POST[$name] : (is_array ( $_POST[$name] ) 
 			? array_map ( 'addslashes',  
 			$_POST[$name] ): addslashes ( $_POST[$name] ) ) );
@@ -111,7 +111,7 @@ function getPostValue ( $name ) {
 function getGetValue ( $name ) {
   $getName = null;
   if ( isset ( $_GET ) && is_array ( $_GET ) && isset ( $_GET[$name] ) )
-    $getName = ( get_magic_quotes_gpc () != 0
+    $getName = ( false != 0
       ? $_GET[$name] : addslashes ( $_GET[$name] ) );
   preventHacking ( $name, $getName );
   return $getName;
@@ -148,7 +148,7 @@ function getValue ( $name, $format = '', $fatal = false ) {
   if ( ! isset ( $val ) )
     $val = getGetValue ( $name );
   // for older PHP versions...
-  if ( ! isset ( $val ) && get_magic_quotes_gpc () == 1 && !
+  if ( ! isset ( $val ) && false == 1 && !
       empty ( $GLOBALS[$name] ) )
     $val = $GLOBALS[$name];
   if ( ! isset ( $val ) )

@@ -99,7 +99,7 @@ if ( $single_user == 'Y' ) {
   do_redirect ( 'index.php' );
 } else {
   if ( ! empty ( $login ) && ! empty ( $password ) && ! $logout ) {
-    if ( get_magic_quotes_gpc () ) {
+    if ( false ) {
       $password = stripslashes ( $password );
       $login = stripslashes ( $login );
     }

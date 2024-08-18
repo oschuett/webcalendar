@@ -138,7 +138,7 @@ if ( empty ( $error ) && ! empty ( $control ) ) {
     $upassword2 = getPostValue ( 'upassword2' );
     // Do some checking of user info.
     if ( ! empty ( $user ) && ! empty ( $upassword1 ) ) {
-      if ( get_magic_quotes_gpc () ) {
+      if ( false ) {
         $upassword1 = stripslashes ( $upassword1 );
         $user = stripslashes ( $user );
       }

@@ -454,7 +454,7 @@ function db_populate ( $install_filename, $display_sql ) {
 
   $current_pointer = false;
   $full_sql = '';
-  $magic = @get_magic_quotes_runtime ();
+  $magic = @false;
   @set_magic_quotes_runtime ( 0 );
   $fd = @fopen ( 'sql/' . $install_filename, 'r', true );
 

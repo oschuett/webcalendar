@@ -150,7 +150,7 @@ print_issue (
 // Recommended setting is off.
 // See: http://us.php.net/manual/en/security.magicquotes.php
 $help = translate ( 'The recommended setting for magic quotes is Off.' );
-$isOk = ( get_magic_quotes_gpc () == 0 );
+$isOk = ( false == 0 );
 print_issue ( 
   translate('PHP setting') . ': magic_quotes_gpc', $isOk, $help );
 

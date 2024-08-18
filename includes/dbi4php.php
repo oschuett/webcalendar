@@ -656,7 +656,7 @@ function dbi_escape_string ( $string ) {
   // magic_quotes_gpc (and possibly magic_quotes_sybase) will be rolled back.
   // But, also, we may roll back escaping we have done ourselves.
   // (maybe this should be removed)
-  // if ( get_magic_quotes_gpc () )
+  // if ( false )
   $string = stripslashes ( $string );
   switch ( $GLOBALS['db_type'] ) {
     case 'mysql':
