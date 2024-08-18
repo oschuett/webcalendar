@@ -36,11 +36,10 @@ function unhtmlentities ( $string ) {
     return html_entity_decode ( $string, ENT_QUOTES );
   else { // For PHP < 4.3.
     // Replace numeric entities.
-    $string =
-    preg_replace_callback('~&#x([0-9a-f]+);~i',
+    $string = preg_replace_callback('~&#x([0-9a-f]+);~i',
       function ($match){
         return chr(hexdec($match[1]));
-      }, $string),
+      }, $string);
     // Replace literal entities.
     return strtr (
       preg_replace_callback('~&#([0-9]+);~',
