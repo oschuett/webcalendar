@@ -37,10 +37,16 @@ function unhtmlentities ( $string ) {
   else { // For PHP < 4.3.
     // Replace numeric entities.
     $string =
-    preg_replace ( '~&#x([0-9a-f]+);~ei', 'chr ( hexdec ( "\\1" ) )', $string );
+    preg_replace_callback('~&#x([0-9a-f]+);~i',
+      function ($match){
+        return chr(hexdec($match[1]));
+      }, $string),
     // Replace literal entities.
     return strtr (
-      preg_replace ( '~&#([0-9]+);~e', 'chr ( \\1 )', $string ),
+      preg_replace_callback('~&#([0-9]+);~',
+        function ($match){
+          return chr($match[1]);
+        }, $string),
       array_flip ( get_html_translation_table ( HTML_ENTITIES, ENT_QUOTES ) ) );
   }
 }
