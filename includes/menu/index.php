@@ -128,7 +128,7 @@ $showHelp = ( access_is_enabled ()
   ? access_can_access_function ( ACCESS_HELP, $user )
   : ( $login != '__public__' && ! $is_nonuser ) );
 // Views
-$view_cnt = count ( $views );
+$view_cnt = count ( (array)$views );
 
 if ( ( access_can_access_function ( ACCESS_VIEW, $user ) && $ALLOW_VIEW_OTHER != 'N' ) && $view_cnt > 0 ) {
   $views_link = array ();

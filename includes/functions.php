@@ -4663,7 +4663,7 @@ function print_entry ( $event, $date ) {
       <a ' . $title . ' class="' . $class . '" id="' . "$linkid\" $href"
    . '><img src="';
 
-  $catNum = abs ( $event->getCategory () );
+  $catNum = abs ( (int)$event->getCategory () );
   $icon = $cal_type . '.gif';
   if ( $catNum > 0 ) {
     $catIcon = 'icons/cat-' . $catNum . '.gif';

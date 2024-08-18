@@ -196,7 +196,7 @@ function export_get_attendee( $id, $export ) {
           $attendee[$count] .= 'NEEDS-ACTION';
           break;
         default:
-          continue;
+          continue 2;
       } //end switch
       if ( strcmp( $export, 'vcal' ) == 0 ) {
         $attendee[$count] .= ';ENCODING=QUOTED-PRINTABLE:';
