@@ -3329,8 +3329,8 @@ function html_for_add_icon ( $date = 0, $hour = '', $minute = '', $user = '' ) {
     $newEntryStr = translate ( 'New Entry' );
 
   if ( $minute < 0 ) {
-    $hour = $hour -1;
-    $minute = abs ( $minute );
+    $hour = intval($hour) -1;
+    $minute = abs ( (int)$minute );
   }
   return '
         <a title="' . $newEntryStr . '" href="edit_entry.php?'
