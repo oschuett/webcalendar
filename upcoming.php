@@ -185,7 +185,7 @@ function print_upcoming_event ( $e, $date ) {
         $link .= '>';
         if ( empty ( $UPCOMING_DISPLAY_CAT_ICONS ) ||
           $UPCOMING_DISPLAY_CAT_ICONS != 'N' ) {
-          $catNum = abs ( $e->getCategory () );
+          $catNum = abs ( (int)$e->getCategory () );
           if ( $catNum > 0 ) {
             $catIcon = 'icons/cat-' . $catNum . '.gif';
             if ( file_exists ( $catIcon ) )

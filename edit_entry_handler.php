@@ -628,7 +628,7 @@ if ( empty ( $error ) ) {
       $values[] = $id;
 
       $names[] = 'cat_id';
-      $values[] = abs ( $categories[$i] );
+      $values[] = abs ( (int)$categories[$i] );
 
       // We set cat_id negative in form if global.
       if ( $categories[$i] > 0 ) {

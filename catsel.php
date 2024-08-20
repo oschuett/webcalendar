@@ -72,14 +72,14 @@ if ( strlen ( $cats ) ) {
   foreach ( $eventcats as $K ) {
     // disable if not creator and category is Global
     $show_ast = '';
-    $disabled = ( empty ( $categories[abs ( $K )]['cat_owner'] ) &&
+    $disabled = ( empty ( $categories[abs ( (int)$K )]['cat_owner'] ) &&
       substr ( $form, 0, 4 ) != 'edit' ? 'disabled' : '' );
-    if ( empty ( $categories[abs ( $K )]['cat_owner'] ) ) {
+    if ( empty ( $categories[abs ( (int)$K )]['cat_owner'] ) ) {
       $show_ast = '*';
     }
     echo '
             <option value="' . "$K\" $disabled>"
-     . htmlentities ( $categories[abs ( $K )]['cat_name'] ) . $show_ast . '</option>';
+     . htmlentities ( $categories[abs ( (int)$K )]['cat_name'] ) . $show_ast . '</option>';
   }
 }
 

@@ -86,7 +86,7 @@ if ( ! empty ( $cat_id ) && empty ( $error ) ) {
       $values[] = '?';
       $values[] = '?';
       $sql_params[] = $id;
-      $sql_params[] = abs ( $categories[$i] );
+      $sql_params[] = abs ( (int)$categories[$i] );
       $sql_params[] = ( $i + 1 );
       $sql_params[] = $login;
     }
