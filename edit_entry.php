@@ -450,7 +450,7 @@ if ( ! isset ( $hour ) && $hour != 0 )
   $hour = -1;
 else
 if ( isset ( $hour ) && $hour >= 0 )
-  $cal_time = ( intval($hour) * 10000 ) + ( isset ( $minute ) ? $minute * 100 : 0 );
+  $cal_time = ( intval($hour) * 10000 ) + ( isset ( $minute ) ? intval($minute) * 100 : 0 );
 
 if ( empty ( $access ) )
   $access = '';
