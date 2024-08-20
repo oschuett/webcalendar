@@ -165,7 +165,7 @@ $webcalConfig = array (
 function db_load_config () {
   global $webcalConfig;
 
-  while ( list ( $key, $val ) = each ( $webcalConfig ) ) {
+  foreach( $webcalConfig as $key => $val ) {
     $res = dbi_execute ( 'SELECT cal_value FROM webcal_config
       WHERE cal_setting = ?', array ( $key ), false, false );
     $sql = 'INSERT INTO webcal_config ( cal_setting, cal_value ) VALUES (?,?)';

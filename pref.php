@@ -13,7 +13,7 @@ SetCookie ( 'webcalendar_csscache', $webcalendar_csscache );
 
 function save_pref( $prefs, $src) {
   global $my_theme, $prefuser;
-  while ( list ( $key, $value ) = each ( $prefs ) ) {
+  foreach( $prefs as $key => $value ) {
     if ( $src == 'post' ) {
       $setting = substr ( $key, 5 );
       $prefix = substr ( $key, 0, 5 );
@@ -291,7 +291,7 @@ if ( $ALLOW_COLOR_CUSTOMIZATION == 'Y' ) { ?>
 <?php
  define_languages (); //load the language list
  reset ( $languages );
- while ( list ( $key, $val ) = each ( $languages ) ) {
+ foreach( $languages as $key => $val ) {
    // Don't allow users to select browser-defined.  We want them to pick
    // a language so that when we send reminders (done without the benefit
    // of a browser-preferred language), we'll know which language to use.

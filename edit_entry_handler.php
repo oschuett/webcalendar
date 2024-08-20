@@ -839,7 +839,7 @@ if ( empty ( $error ) ) {
     $from = $EMAIL_FALLBACK_FROM;
   // Check if participants have been removed and send out emails.
   if ( ! $newevent && count ( $old_status ) > 0 ) {
-    while ( list ( $old_participant, $dummy ) = each ( $old_status ) ) {
+    foreach( $old_status as $old_participant => $dummy ) {
       $found_flag = false;
       for ( $i = 0; $i < $partcnt; $i++ ) {
         if ( $participants[$i] == $old_participant ) {
